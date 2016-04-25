@@ -1,0 +1,51 @@
+.feature.feature-home {
+	background-image: url('feature.jpg');
+	height: 600px;
+	min-height: 80vh;
+}
+
+.engagement-image {
+	background-image: url('engagement-sm.jpg');
+	background-position: center;
+	background-size: cover;
+	padding: 6rem 1rem;
+	text-align: center;
+
+	& img {
+		max-height: 320px;
+	}
+}
+
+.wedding-image {
+	background-image: url('feature2.jpg');
+	background-position: center;
+	background-size: cover;
+	height: 400px;
+}
+
+.wedding-party {
+
+	& ul {
+		list-style-type: none;
+	}
+
+	& figure {
+		display: flex;
+		flex-direction: row;
+	}
+
+	& figcaption {
+		justify-content: center;
+		display: flex;
+		padding-left: 20px;
+		flex-direction: column;
+	}
+
+	& img {
+		border: 2px solid var(--c-dark);
+		border-radius: 50%;
+		filter: grayscale(50%);
+		height: 96px;
+		width: 96px;
+	}
+}

@@ -1,0 +1,7 @@
+.feature.feature-registry {
+	background-image: url('registry.jpg');
+}
+
+.registry-images {
+	background-color: var(--c-dark);
+}

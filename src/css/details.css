@@ -1,0 +1,10 @@
+.feature.feature-vhc {
+	background-image: url('vhc.jpg');
+}
+
+.hotel-image {
+	background-image: url('hotel.jpg');
+	background-position: 50% 65%;
+	background-size: cover;
+	height: 400px;
+}
