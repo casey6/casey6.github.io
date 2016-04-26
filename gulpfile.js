@@ -1,6 +1,7 @@
 var browserSync = require('browser-sync').create(),
     concat = require('gulp-concat'),
     gulp = require('gulp'),
+    imagemin = require('gulp-imagemin'),
     postcss = require('gulp-postcss'),
     uglify = require('gulp-uglify');
 
@@ -34,7 +35,8 @@ gulp.task('html', function(){
 });
 
 gulp.task('img', function(){
-  gulp.src(['./src/img/**/*.jpg', './src/img/**/*.png'])
+  gulp.src(['./src/img/*.jpg', './src/img/*.png'])
+    .pipe(imagemin())
     .pipe(gulp.dest('./dist/'));
 });
 
