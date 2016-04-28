@@ -185,6 +185,7 @@ img {
 		filter: blur(10px);
 		z-index: -1;
 	}
+	
 	& img {
 		border: 2px solid var(--c-dark);
 	}
@@ -193,4 +194,8 @@ img {
 .image-grid {
 	box-sizing: border-box;
 	padding: 10px;
+
+	& img {
+		border: 2px solid var(--c-dark);
+	}
 }
