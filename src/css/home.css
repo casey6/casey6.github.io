@@ -10,10 +10,9 @@
 }
 
 .engagement-image {
-	background-image: url('engagement-sm.jpg');
-	background-position: center;
-	background-size: cover;
+	overflow: hidden;
 	padding: 6rem 1rem;
+	position: relative;
 	text-align: center;
 
 	@media only screen and (max-width: 48em) {
@@ -22,6 +21,17 @@
 
 	& img {
 		max-height: 320px;
+
+		&:first-child {
+			filter: blur(10px);
+			left: -10px;
+			max-height: none;
+			position: absolute;
+			top: calc(-50vw);
+			z-index: -1;
+			width: calc(100vw + 20px);
+			max-width: none;
+		}
 	}
 }
 
