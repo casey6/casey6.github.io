@@ -2,6 +2,11 @@
 	background-image: url('feature.jpg');
 	height: 600px;
 	min-height: 80vh;
+
+	@media only screen and (max-width: 48em) {
+		height: 400px;
+		min-height: 0;
+	}
 }
 
 .engagement-image {
@@ -10,6 +15,10 @@
 	background-size: cover;
 	padding: 6rem 1rem;
 	text-align: center;
+
+	@media only screen and (max-width: 48em) {
+		padding: 1.5rem 1rem;
+	}
 
 	& img {
 		max-height: 320px;
@@ -27,17 +36,21 @@
 
 	& ul {
 		list-style-type: none;
+		margin: 0;
+		padding: 0;
 	}
 
 	& figure {
 		display: flex;
 		flex-direction: row;
+		margin: 0;
+		padding: 1rem;
 	}
 
 	& figcaption {
 		justify-content: center;
 		display: flex;
-		padding-left: 20px;
+		padding-left: 1rem;
 		flex-direction: column;
 	}
 
@@ -45,7 +58,7 @@
 		border: 2px solid var(--c-dark);
 		border-radius: 50%;
 		filter: grayscale(50%);
-		height: 96px;
-		width: 96px;
+		height: 6rem;
+		width: 6rem;
 	}
 }

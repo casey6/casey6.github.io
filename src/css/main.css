@@ -8,6 +8,10 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
 	font-size: 3rem;
 	margin-bottom: 1rem;
+
+	@media only screen and (max-width: 48em) {
+		font-size: 2rem;
+	}
 }
 
 h4 {
@@ -38,6 +42,10 @@ img {
 	margin: 0 auto;
 	max-width: 768px;
 	padding: 6rem 1rem;
+
+	@media only screen and (max-width: 48em) {
+		padding: 1.5rem 1rem;
+	}
 
 	&.wide {
 		max-width: 1080px;
@@ -83,6 +91,21 @@ img {
 	}
 }
 
+@media only screen and (max-width: 48em) {
+	.header {
+		padding: 10px 5px;
+
+		& a {
+			font-size: 10px;
+			padding: 5px;
+		}
+
+		& img {
+			height: 24px;
+		}
+	}
+}
+
 .feature {
 	background-position: center;
 	background-size: cover;
@@ -95,12 +118,20 @@ img {
 	text-align: center;
 	width: 100%;
 
+	@media only screen and (max-width: 48em) {
+		padding-top: 48px;
+	}
+
 	& h1 {
 		color: #fff;
 		font-family: var(--f-header);
 		font-weight: var(--fw-header-heavy);
 		font-size: 4rem;
 		text-shadow: 0 0 4px var(--c-dark);
+
+		@media only screen and (max-width: 48em) {
+			font-size: 2rem;
+		}
 	}
 
 	& h2 {
@@ -109,12 +140,20 @@ img {
 		font-weight: var(--fw-header-heavy);
 		font-size: 2rem;
 		text-shadow: 0 0 4px var(--c-dark);
+
+		@media only screen and (max-width: 48em) {
+			font-size: 1.5rem;
+		}
 	}
 
 	& img {
 		filter: drop-shadow(0 0 4px rgba(0,0,0,0.9));
 		height: auto;
 		width: 240px;
+
+		@media only screen and (max-width: 48em) {
+			width: 192px;
+		}
 	}
 }
 
@@ -126,6 +165,14 @@ img {
 	justify-content: center;
 	padding: 6rem 1rem;
 	text-align: center;
+
+	@media only screen and (max-width: 48em) {
+		padding: 3rem 1rem;
+	}
+
+	& img {
+		max-width: 240px;
+	}
 }
 
 .image-shadow {
