@@ -32,6 +32,12 @@ a {
 img {
 	height: auto;
 	max-width: 100%;
+
+
+	&.border {
+		border: 2px solid var(--c-dark);
+		border-radius: 2px;
+	}
 }
 
 .text-center {
@@ -185,17 +191,9 @@ img {
 		filter: blur(10px);
 		z-index: -1;
 	}
-	
-	& img {
-		border: 2px solid var(--c-dark);
-	}
 }
 
 .image-grid {
 	box-sizing: border-box;
 	padding: 10px;
-
-	& img {
-		border: 2px solid var(--c-dark);
-	}
 }
