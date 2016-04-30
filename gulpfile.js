@@ -6,6 +6,7 @@ var browserSync = require('browser-sync').create(),
     uglify = require('gulp-uglify');
 
 postcss.options = [
+  require('postcss-partial-import')(),
   require('postcss-css-variables')(),
   require('postcss-nesting')(),
   require('autoprefixer')({ browsers: ['last 2 versions', 'ie >= 8']  }),
@@ -14,8 +15,7 @@ postcss.options = [
 ];
 
 gulp.task('css', function () {
-  return gulp.src('./src/css/**/*.css')
-    .pipe(concat('app.css'))
+  return gulp.src('./src/css/app.css')
     .pipe(postcss(postcss.options))
     .pipe(gulp.dest('./dist'))
     .pipe(browserSync.stream());
