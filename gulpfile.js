@@ -34,21 +34,25 @@ gulp.task('js', function() {
 });
 
 gulp.task('html', function() {
-  gulp.src(['./src/**/*.html'])
+  return gulp.src(['./src/**/*.html'])
     .pipe(gulp.dest('./dist/'));
 });
 
-gulp.task('img', function() {
-  gulp.src(['./src/img/*.jpg', './src/img/*.png'])
+gulp.task('img', ['img-resize-feature', 'img-resize-photos'], function() {
+  return gulp.src(['./src/img/*.jpg', './src/img/*.png'])
     .pipe(imagemin())
     .pipe(gulp.dest('./dist/'));
+});
 
-  gulp.src('./src/img/feature/*.jpg')
+gulp.task('img-resize-feature', function() {
+  return gulp.src('./src/img/feature/*.jpg')
     .pipe(imageResize({ width: 1500 }))
     .pipe(imagemin())
     .pipe(gulp.dest('./dist/'));
+});
 
-  gulp.src('./src/img/photos/*.jpg')
+gulp.task('img-resize-photos', function() {
+  return gulp.src('./src/img/photos/*.jpg')
     .pipe(imageResize({ width: 640 }))
     .pipe(imagemin())
     .pipe(gulp.dest('./dist/'));
@@ -60,7 +64,7 @@ gulp.task('clean', function() {
 });
 
 gulp.task('build', ['html', 'css', 'js', 'img'], function() {
-  gulp.src('./src/favicon.ico')
+  return gulp.src('./src/favicon.ico')
     .pipe(gulp.dest('./dist/'));
 });
 
@@ -74,8 +78,8 @@ gulp.task('default', ['html', 'css', 'js', 'img'], function() {
   gulp.watch("./dist/*.html").on('change', browserSync.reload);
 });
 
-gulp.task('deploy', ['clean', 'build'], function() {
-  return gulp.src('dist/**/*')
+gulp.task('deploy', function() {
+  gulp.src('./dist/**/*')
     .pipe(file('CNAME', 'jacobson.wedding'))
     .pipe(ghPages({ branch: 'master' }));
 });
