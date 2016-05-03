@@ -1,5 +1,5 @@
 .feature.feature-home {
-	background-image: url('feature.jpg');
+	background-image: url('feature-home.jpg');
 	height: 600px;
 	min-height: 80vh;
 
@@ -36,7 +36,7 @@
 }
 
 .wedding-image {
-	background-image: url('feature2.jpg');
+	background-image: url('feature-engagement-shoot.jpg');
 	background-position: center;
 	background-size: cover;
 	height: 400px;

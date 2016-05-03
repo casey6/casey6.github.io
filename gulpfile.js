@@ -2,6 +2,7 @@ var browserSync = require('browser-sync').create(),
     concat = require('gulp-concat'),
     gulp = require('gulp'),
     imagemin = require('gulp-imagemin'),
+    imageResize = require('gulp-image-resize'),
     postcss = require('gulp-postcss'),
     uglify = require('gulp-uglify');
 
@@ -29,13 +30,23 @@ gulp.task('js', function() {
     .pipe(browserSync.stream());
 });
 
-gulp.task('html', function(){
+gulp.task('html', function() {
   gulp.src(['./src/**/*.html'])
     .pipe(gulp.dest('./dist/'));
 });
 
-gulp.task('img', function(){
+gulp.task('img', function() {
   gulp.src(['./src/img/*.jpg', './src/img/*.png'])
+    .pipe(imagemin())
+    .pipe(gulp.dest('./dist/'));
+
+  gulp.src('./src/img/feature/*.jpg')
+    .pipe(imageResize({ width: 1500 }))
+    .pipe(imagemin())
+    .pipe(gulp.dest('./dist/'));
+
+  gulp.src('./src/img/photos/*.jpg')
+    .pipe(imageResize({ width: 640 }))
     .pipe(imagemin())
     .pipe(gulp.dest('./dist/'));
 });
