@@ -78,8 +78,8 @@ gulp.task('default', ['html', 'css', 'js', 'img'], function() {
   gulp.watch("./dist/*.html").on('change', browserSync.reload);
 });
 
-gulp.task('deploy', function() {
-  gulp.src('./dist/**/*')
+gulp.task('deploy', ['build'], function() {
+  return gulp.src('./dist/**/*')
     .pipe(file('CNAME', 'jacobson.wedding'))
     .pipe(ghPages({ branch: 'master' }));
 });
