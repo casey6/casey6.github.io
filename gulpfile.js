@@ -14,7 +14,7 @@ postcss.options = [
   require('cssnano')()
 ];
 
-gulp.task('css', function () {
+gulp.task('css', function() {
   return gulp.src('./src/css/app.css')
     .pipe(postcss(postcss.options))
     .pipe(gulp.dest('./dist'))
@@ -40,7 +40,12 @@ gulp.task('img', function(){
     .pipe(gulp.dest('./dist/'));
 });
 
-gulp.task('default', ['html', 'css', 'js', 'img'], function () {
+gulp.task('build', ['html', 'css', 'js', 'img'], function() {
+  gulp.src('./src/favicon.ico')
+    .pipe(gulp.dest('./dist/'));
+});
+
+gulp.task('default', ['html', 'css', 'js', 'img'], function() {
   browserSync.init({
       server: "./dist"
   });
