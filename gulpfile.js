@@ -1,5 +1,7 @@
 var browserSync = require('browser-sync').create(),
+    clean = require('gulp-clean'),
     concat = require('gulp-concat'),
+    file = require('gulp-file'),
     ghPages = require('gulp-gh-pages'),
     gulp = require('gulp'),
     imagemin = require('gulp-imagemin'),
@@ -52,6 +54,11 @@ gulp.task('img', function() {
     .pipe(gulp.dest('./dist/'));
 });
 
+gulp.task('clean', function() {
+  return gulp.src('./dist/', { read: false })
+    .pipe(clean());
+});
+
 gulp.task('build', ['html', 'css', 'js', 'img'], function() {
   gulp.src('./src/favicon.ico')
     .pipe(gulp.dest('./dist/'));
@@ -67,8 +74,8 @@ gulp.task('default', ['html', 'css', 'js', 'img'], function() {
   gulp.watch("./dist/*.html").on('change', browserSync.reload);
 });
 
-gulp.task('deploy', ['build'] function() {
+gulp.task('deploy', ['clean', 'build'], function() {
   return gulp.src('dist/**/*')
     .pipe(file('CNAME', 'jacobson.wedding'))
-    .pipe(ghPages({branch: 'master'}));
+    .pipe(ghPages({ branch: 'master' }));
 });
