@@ -32,8 +32,7 @@ a {
 img {
 	height: auto;
 	max-width: 100%;
-
-
+	
 	&.border {
 		border: 2px solid var(--c-dark);
 		border-radius: 2px;

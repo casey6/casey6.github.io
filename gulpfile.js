@@ -1,5 +1,6 @@
 var browserSync = require('browser-sync').create(),
     concat = require('gulp-concat'),
+    ghPages = require('gulp-gh-pages'),
     gulp = require('gulp'),
     imagemin = require('gulp-imagemin'),
     imageResize = require('gulp-image-resize'),
@@ -63,6 +64,11 @@ gulp.task('default', ['html', 'css', 'js', 'img'], function() {
   gulp.watch('./src/css/**/*.css', ['css']);
   gulp.watch('./src/js/**/*.js', ['js']);
   gulp.watch('./src/**/*.html', ['html']);
-  gulp.watch('./src/img/**/*.jpg', ['img']);
   gulp.watch("./dist/*.html").on('change', browserSync.reload);
+});
+
+gulp.task('deploy', ['build'] function() {
+  return gulp.src('dist/**/*')
+    .pipe(file('CNAME', 'jacobson.wedding'))
+    .pipe(ghPages({branch: 'master'}));
 });
