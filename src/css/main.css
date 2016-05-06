@@ -66,11 +66,6 @@ img {
 	width: 100%;
 	z-index: 10;
 
-	&.scrolled {
-		background: rgba(68, 68, 68, .95);
-		opacity: 1;
-	}
-
 	& .content {
 		align-items: center;
 		display: flex;
@@ -94,6 +89,11 @@ img {
 		height: 48px;
 		width: auto;
 	}
+}
+
+.scrolled .header {
+	background: rgba(68, 68, 68, .95);
+	opacity: 1;
 }
 
 @media only screen and (max-width: 48em) {

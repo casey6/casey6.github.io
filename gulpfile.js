@@ -26,7 +26,7 @@ gulp.task('css', function() {
 });
 
 gulp.task('js', function() {
-  return gulp.src('./src/js/**/*.js')
+  return gulp.src(['./src/js/flexibility.js', './src/js/main.js'])
     .pipe(concat('app.js'))
     .pipe(uglify())
     .pipe(gulp.dest('./dist'))
