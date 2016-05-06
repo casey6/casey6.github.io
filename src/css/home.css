@@ -1,7 +1,12 @@
-.feature.feature-home {
-	background-image: url('feature-home.jpg');
+.feature-home {
+	background-image: var(--feature-home-sm);
 	height: 600px;
 	min-height: 80vh;
+
+	&.feature-large::before {
+		background-image: url(feature-home.jpg);
+		opacity: 1;
+	}
 
 	@media only screen and (max-width: 48em) {
 		height: 400px;

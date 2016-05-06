@@ -31,11 +31,23 @@ var throttle = function(func, wait, options) {
   };
 };
 
+
 var scroll = throttle(function() {
 	if (document.body.scrollTop > 200) {
 		document.body.classList.add('scrolled');
-		window.removeEventListener('scroll', scroll);
+		document.removeEventListener('scroll', scroll);
 	}
 }, 250, true);
 
-window.addEventListener('scroll', scroll);
+document.addEventListener('scroll', scroll);
+
+document.addEventListener("DOMContentLoaded", function() {
+  var image = new Image();
+  var feature = document.querySelector('.feature');
+
+  image.onload = function () {
+    feature.classList.add('feature-large');
+  };
+
+  image.src = feature.classList[1] + '.jpg';
+});

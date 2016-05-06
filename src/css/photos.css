@@ -1,15 +1,35 @@
-.feature.feature-photos {
-	background-image: url('feature-photos.jpg');
+.feature-photos {
+	background-image: var(--feature-photos-sm);
+
+	&.feature-large::before {
+		background-image: url(feature-photos.jpg);
+		opacity: 1;
+	}
 }
 
-.feature.feature-engagement {
-	background-image: url('feature-engagement.jpg');
+.feature-engagement {
+	background-image: var(--feature-engagement-sm);
+
+	&.feature-large::before {
+		background-image: url(feature-engagement.jpg);
+		opacity: 1;
+	}
 }
 
-.feature.feature-happy-couple {
-	background-image: url('feature-happy-couple.jpg');
+.feature-happy-couple {
+	background-image: var(--feature-happy-couple-sm);
+
+	&.feature-large::before {
+		background-image: url(feature-happy-couple.jpg);
+		opacity: 1;
+	}
 }
 
-.feature.feature-engagement-shoot {
-	background-image: url('feature-engagement-shoot.jpg');
+.feature-engagement-shoot {
+	background-image: var(--feature-engagement-shoot-sm);
+
+	&.feature-large::before {
+		background-image: url(feature-engagement-shoot.jpg);
+		opacity: 1;
+	}
 }

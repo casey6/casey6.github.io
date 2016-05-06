@@ -1,6 +1,5 @@
 var browserSync = require('browser-sync').create(),
     clean = require('gulp-clean'),
-    concat = require('gulp-concat'),
     file = require('gulp-file'),
     ghPages = require('gulp-gh-pages'),
     gulp = require('gulp'),
@@ -14,7 +13,6 @@ postcss.options = [
   require('postcss-css-variables')(),
   require('postcss-nesting')(),
   require('autoprefixer')({ browsers: ['last 2 versions', 'ie >= 8']  }),
-  require('postcss-flexibility')(),
   require('cssnano')()
 ];
 
@@ -26,8 +24,7 @@ gulp.task('css', function() {
 });
 
 gulp.task('js', function() {
-  return gulp.src(['./src/js/flexibility.js', './src/js/main.js'])
-    .pipe(concat('app.js'))
+  return gulp.src('./src/js/app.js')
     .pipe(uglify())
     .pipe(gulp.dest('./dist'))
     .pipe(browserSync.stream());
