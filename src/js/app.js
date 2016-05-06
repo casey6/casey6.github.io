@@ -40,14 +40,3 @@ var scroll = throttle(function() {
 }, 250, true);
 
 document.addEventListener('scroll', scroll);
-
-document.addEventListener("DOMContentLoaded", function() {
-  var image = new Image();
-  var feature = document.querySelector('.feature');
-
-  image.onload = function () {
-    feature.classList.add('feature-large');
-  };
-
-  image.src = feature.classList[1] + '.jpg';
-});

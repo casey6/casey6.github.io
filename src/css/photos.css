@@ -1,35 +1,31 @@
 .feature-photos {
 	background-image: var(--feature-photos-sm);
 
-	&.feature-large::before {
+	&::before {
 		background-image: url(feature-photos.jpg);
-		opacity: 1;
 	}
 }
 
 .feature-engagement {
 	background-image: var(--feature-engagement-sm);
 
-	&.feature-large::before {
+	&::before {
 		background-image: url(feature-engagement.jpg);
-		opacity: 1;
 	}
 }
 
 .feature-happy-couple {
 	background-image: var(--feature-happy-couple-sm);
 
-	&.feature-large::before {
+	&::before {
 		background-image: url(feature-happy-couple.jpg);
-		opacity: 1;
 	}
 }
 
 .feature-engagement-shoot {
 	background-image: var(--feature-engagement-shoot-sm);
 
-	&.feature-large::before {
+	&::before {
 		background-image: url(feature-engagement-shoot.jpg);
-		opacity: 1;
 	}
 }

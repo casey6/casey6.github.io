@@ -134,10 +134,8 @@ img {
 		content: '';
 		height: 100%;
 		left: 0;
-		opacity: 0;
 		position: absolute;
 		top: 0;
-		transition: opacity .25s ease;
 		width: 100%;
 	}
 

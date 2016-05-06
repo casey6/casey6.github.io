@@ -1,9 +1,8 @@
 .feature-registry {
 	background-image: var(--feature-registry-sm);
 
-	&.feature-large::before {
+	&::before {
 		background-image: url(feature-registry.jpg);
-		opacity: 1;
 	}
 }
 

@@ -3,9 +3,8 @@
 	height: 600px;
 	min-height: 80vh;
 
-	&.feature-large::before {
+	&::before {
 		background-image: url(feature-home.jpg);
-		opacity: 1;
 	}
 
 	@media only screen and (max-width: 48em) {

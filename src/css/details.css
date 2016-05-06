@@ -1,9 +1,8 @@
 .feature-details {
 	background-image: var(--feature-details-sm);
 
-	&.feature-large::before {
+	&::before {
 		background-image: url(feature-details.jpg);
-		opacity: 1;
 	}
 }
 
