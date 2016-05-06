@@ -44,14 +44,14 @@ gulp.task('img', ['img-resize-feature', 'img-resize-photos'], function() {
 gulp.task('img-resize-feature', function() {
   return gulp.src('./src/img/feature/*.jpg')
     .pipe(imageResize({ width: 1500 }))
-    .pipe(imagemin())
+    .pipe(imagemin({ progressive: true }))
     .pipe(gulp.dest('./dist/'));
 });
 
 gulp.task('img-resize-photos', function() {
   return gulp.src('./src/img/photos/*.jpg')
     .pipe(imageResize({ width: 640 }))
-    .pipe(imagemin())
+    .pipe(imagemin({ progressive: true }))
     .pipe(gulp.dest('./dist/'));
 });
 
