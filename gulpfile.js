@@ -81,5 +81,5 @@ gulp.task('default', ['html', 'css', 'js', 'img'], function() {
 gulp.task('deploy', function() {
   return gulp.src('./dist/**/*')
     .pipe(file('CNAME', 'jacobson.wedding'))
-    .pipe(ghPages({ branch: 'master' }));
+    .pipe(ghPages({ branch: 'gh-pages' }));
 });
