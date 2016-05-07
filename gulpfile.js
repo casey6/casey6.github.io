@@ -3,6 +3,7 @@ var browserSync = require('browser-sync').create(),
     file = require('gulp-file'),
     ghPages = require('gulp-gh-pages'),
     gulp = require('gulp'),
+    htmlmin = require('gulp-htmlmin'),
     imagemin = require('gulp-imagemin'),
     imageResize = require('gulp-image-resize'),
     postcss = require('gulp-postcss'),
@@ -32,6 +33,7 @@ gulp.task('js', function() {
 
 gulp.task('html', function() {
   return gulp.src(['./src/**/*.html'])
+    .pipe(htmlmin({ collapseWhitespace: true, minifyJS: true }))
     .pipe(gulp.dest('./dist/'));
 });
 
